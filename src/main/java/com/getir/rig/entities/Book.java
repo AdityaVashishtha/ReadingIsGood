@@ -1,4 +1,4 @@
-package com.getir.rig.models;
+package com.getir.rig.entities;
 
 import lombok.Data;
 
