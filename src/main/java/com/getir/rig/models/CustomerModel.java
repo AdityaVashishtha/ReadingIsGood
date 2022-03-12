@@ -3,9 +3,17 @@ package com.getir.rig.models;
 import com.getir.rig.entities.Customer;
 import lombok.Data;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+
 @Data
 public class CustomerModel {
+
+    @NotBlank(message = "Email Can't be blank")
+    @Email(message = "Invalid email")
     private String email;
+
+    @NotBlank(message = "Name should not be blank")
     private String name;
 
     public Customer toCustomerEntity() {

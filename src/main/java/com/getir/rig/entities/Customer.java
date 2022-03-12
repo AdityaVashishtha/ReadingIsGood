@@ -2,29 +2,29 @@ package com.getir.rig.entities;
 
 import lombok.Data;
 import org.springframework.hateoas.RepresentationModel;
-import org.springframework.validation.annotation.Validated;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
+
+import java.util.List;
 
 import static javax.persistence.GenerationType.AUTO;
+import static javax.persistence.GenerationType.IDENTITY;
 
 @Data
 @Entity
-@Validated
 public class Customer extends RepresentationModel<Customer> {
 
     @Id
-    @GeneratedValue(strategy = AUTO)
+    @GeneratedValue(strategy = IDENTITY)
     private long id;
 
-    @Column(unique = true, nullable = false)
-    @NotBlank
+    @Column(unique = true)
     private String email;
 
     @Column(nullable = false)
-    @NotBlank
     private String name;
 
+    @OneToMany(mappedBy = "customer")
+    private List<BookOrder> orders;
 
 }
