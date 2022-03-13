@@ -12,7 +12,7 @@ public class Book extends RepresentationModel<Book> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private Long id;
 
     private String title;
     @Column(unique = true)
@@ -23,7 +23,5 @@ public class Book extends RepresentationModel<Book> {
     private double cost;
     private int quantity;
 
-    @OneToMany(mappedBy = "book")
-    private List<BookOrder> orders;
 
 }

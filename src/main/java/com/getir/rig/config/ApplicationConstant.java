@@ -6,4 +6,5 @@ public class ApplicationConstant {
     public static final String CUSTOMER_PATH = CURRENT_API_VERSION + "customer" ;
     public static final String ORDER_PATH = CURRENT_API_VERSION + "order" ;
     public static final String BOOK_PATH = CURRENT_API_VERSION + "book" ;
+    public static final String STATS_PATH = CURRENT_API_VERSION + "stats" ;
 }

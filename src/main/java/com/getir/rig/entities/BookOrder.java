@@ -1,5 +1,6 @@
 package com.getir.rig.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import org.springframework.hateoas.RepresentationModel;
 
@@ -12,12 +13,13 @@ public class BookOrder extends RepresentationModel<BookOrder> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private Long id;
 
     @ManyToOne
     private Book book;
 
     @ManyToOne
+    @JsonIgnoreProperties("orders")
     private Customer customer;
 
     private OrderStatus orderStatus;

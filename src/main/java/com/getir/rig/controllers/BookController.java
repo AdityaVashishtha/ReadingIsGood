@@ -7,8 +7,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.websocket.server.PathParam;
-
 import static com.getir.rig.config.ApplicationConstant.BOOK_PATH;
 
 @RestController
@@ -27,7 +25,7 @@ public class BookController {
     }
 
     @PutMapping("/{bookId}")
-    public ResponseEntity<Book> updateBook(@PathParam("bookId") long bookId, @RequestBody UpdateBookRequestModel book) {
+    public ResponseEntity<Book> updateBook(@PathVariable("bookId") Long bookId, @RequestBody UpdateBookRequestModel book) {
         return new ResponseEntity<>(bookService.updateBook(bookId, book.getQuantity()), HttpStatus.OK);
     }
 

@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class CreateOrderModel {
     private String email;
-    private long bookId;
+    private Long bookId;
     private int quantity;
 
 }

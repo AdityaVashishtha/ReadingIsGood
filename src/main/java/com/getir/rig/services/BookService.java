@@ -2,7 +2,6 @@ package com.getir.rig.services;
 
 import com.getir.rig.entities.Book;
 import com.getir.rig.repositories.BookRepository;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -18,7 +17,7 @@ public class BookService {
         return bookRepository.findBookByIsbn(isbn);
     }
 
-    public Book getBookById(long id) {
+    public Book getBookById(Long id) {
         return bookRepository.getById(id);
     }
 
@@ -27,7 +26,7 @@ public class BookService {
         return bookRepository.save(book);
     }
 
-    public Book updateBook(long bookId, int quantity) {
+    public Book updateBook(Long bookId, int quantity) {
         Book currentBook = bookRepository.findById(bookId).orElseThrow(() -> new IllegalArgumentException("Invalid book id"));
         currentBook.setQuantity(quantity);
         bookRepository.save(currentBook);
