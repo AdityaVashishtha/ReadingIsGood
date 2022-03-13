@@ -37,6 +37,9 @@ public class OrderService {
         BookOrder order = new BookOrder();
         Book book = bookService.getBookById(orderModel.getBookId());
         Customer customer = customerService.getCustomerByEmail(orderModel.getEmail());
+        if(book.getQuantity() < orderModel.getQuantity()) {
+            throw new IllegalArgumentException("Ordered Quantity of books not available");
+        }
         order.setBook(book);
         order.setCustomer(customer);
         order.setDate(new Date(System.currentTimeMillis()));
