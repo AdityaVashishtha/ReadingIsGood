@@ -2,11 +2,13 @@ package com.getir.rig.models;
 
 import com.getir.rig.entities.Customer;
 import lombok.Data;
+import lombok.ToString;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
 @Data
+@ToString
 public class CustomerModel {
 
     @NotBlank(message = "Email Can't be blank")

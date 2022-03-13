@@ -7,6 +7,8 @@ import com.getir.rig.entities.Report;
 import com.getir.rig.models.CreateOrderModel;
 import com.getir.rig.repositories.BookRepository;
 import com.getir.rig.repositories.OrderRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -46,8 +48,12 @@ public class OrderService {
         return order;
     }
 
-    public List<BookOrder> getOrdersForCustomerId(Long customerId) {
-        return orderRepository.findBookOrdersByCustomerId(customerId);
+    public Page<BookOrder> getOrdersForCustomerId(Long customerId, Pageable pageable) {
+        return orderRepository.findBookOrdersByCustomerId(customerId, pageable);
+    }
+
+    public Page<BookOrder> getOrdersBetweenDates(Long id, Date afterDate, Date beforeDate, Pageable pageable) {
+        return orderRepository.findBookOrdersBetweenMonths(id, afterDate, beforeDate, pageable);
     }
 
     public List<Report> getStatsReport(Long customerId) {
