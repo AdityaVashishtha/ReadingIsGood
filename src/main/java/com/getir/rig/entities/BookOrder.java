@@ -28,7 +28,6 @@ public class BookOrder extends RepresentationModel<BookOrder> {
     @NotNull
     private Customer customer;
 
-    @NotBlank
     private OrderStatus orderStatus;
 
     @Min(1)
