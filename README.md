@@ -49,8 +49,9 @@ Or you can compile project to Jar via `mvn package` and run jar using java.
 ### Endpoints/Usage / Snapshot
 
 You can explore all the available APIs via Postman Collection included in the code or HAL Explorer as below:
-![Hal Explorer](./src/main/resources/static/sample2.png)
+![Hal Explorer](src/main/resources/static/Sample2.png)
 
 ### Test Coverage
 All controller test covers more than 70% of the code, Snapshot attached.
-![Coverage Snapshot](./src/main/resources/static/sample1.png)
+![Coverage Snapshot](
+src/main/resources/static/Sample1.png)
